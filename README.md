@@ -22,6 +22,8 @@ Click and download https://lamport.azurewebsites.net/tla/tutorial/original-specs
 
 #### Correction to original files
 
+- There are several "click here"s not working. Don't be panic. :)
+
 ##### Session1.tla:
 - add "Sequences" at line 2: EXTENDS Integers, Sequences
   - Otherwise, when following 2.4 Tuples at Session 1, you will see 1 error in Expression: detected Unknown operator: `Len'.
@@ -30,3 +32,26 @@ Click and download https://lamport.azurewebsites.net/tla/tutorial/original-specs
 
 Go to https://lamport.azurewebsites.net/tla/tutorial/session1.html.
 The tutorial is very detailed and easy to follow.
+
+## Tutorial notes
+https://lamport.azurewebsites.net/tla/tutorial/contents.html
+
+### Session 1 Getting Started
+
+- For multiple expressions to evaluate together, we can use the built-in array syntax.
+- For Goldbach's conjecture verification, `\A k \in Nat : k > 1 => (\E a, b \in 2..(2 * k - 1): IsPrime(a) /\ IsPrime(b) /\ a + b = 2 * k)`
+  - `0..100`: only took 5 secs to evaluate as TRUE.
+  - `0..1000`: took 17.3 hours to have result as TRUE.
+
+### Session 2
+
+- Variable assignment is value passing, not reference passing.
+
+### Session 3
+
+- [Property-driven development (PDD)](https://ieeexplore.ieee.org/document/1347507) naturally fits here.
+- Shortcut during debugging from error messages: (Control click) == (click) + (F10)
+
+## Trouble Shooting
+
+- Sometimes you will find the model checking doesn't return anything. It is possible the model is created before running a translation at first.
